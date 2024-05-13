@@ -1,0 +1,158 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:svelte/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:import/warnings",
+    "plugin:import/errors"
+  ],
+  "ignorePatterns": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "warnOnUnsupportedTypeScriptVersion": false,
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".svelte"]
+  },
+  "plugins": [
+    "prettier",
+    "@typescript-eslint",
+    "filenames"
+  ],
+  "rules": {
+    "@typescript-eslint/ban-types": ["error", {
+      "extendDefaults": true,
+      "types": {
+        "{}": false
+      }
+    }],
+    "import/order": ["error", {"groups": ["builtin", "external", "internal", "sibling", "index", "parent"]}],
+    "no-useless-escape": "warn",
+    "no-case-declarations": "warn",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "warn",
+    "object-curly-spacing": ["error", "never"],
+    "curly": "error",
+    "no-var": "error",
+    "semi-spacing": "error",
+    "array-bracket-spacing": ["error", "never"],
+    "default-case": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-inferrable-types": ["error", {
+      "ignoreParameters": true,
+      "ignoreProperties": true
+    }],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-unused-vars": "off",
+    "prefer-const": "error",
+    "no-console": "warn",
+    "no-loop-func": "warn",
+    "new-cap": "off",
+    "no-param-reassign": "warn",
+    "func-names": "off",
+    "no-unused-expressions": "warn",
+    "block-scoped-var": "error",
+//    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/array-type": "off",
+//    "react/self-closing-comp": ["error", {
+//      "component": true,
+//      "html": true
+//    }],
+    "require-await": "error",
+    "no-empty-function": "warn",
+    "@typescript-eslint/no-empty-function": "warn",
+//    "react/button-has-type": "error",
+    "no-new-require": "error",
+    "global-require": "error",
+    "no-duplicate-imports": "error",
+    "no-restricted-imports": "error",
+    "import/no-unresolved": "off",
+//    "react/jsx-boolean-value": "error",
+    "import/named": "warn",
+    "no-underscore-dangle": ["error", { "enforceInMethodNames": true, "enforceInClassFields":true}],
+    "filenames/no-index": 2,
+    "filenames/match-regex": [2, "^[a-z-.]+$", false],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": false
+        }
+      },
+      {
+        "selector": "typeAlias",
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^T[A-Z]",
+          "match": false
+        }
+      },
+      {
+        "selector": "enum",
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "enum",
+        "format": [
+          "UPPER_CASE"
+        ],
+        "modifiers": ["exported"]
+      },
+      {
+        "selector": "enumMember",
+        "format": [
+          "PascalCase"
+        ]
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["const", "exported"],
+        "types": ["string", "array", "boolean", "number"],
+        "format": [
+          "UPPER_CASE"
+        ]
+      },
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": ["is", "should", "has", "can", "did", "will"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "parser": "svelte-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      }
+    }
+  ],
+  "settings": {
+
+  },
+  "env": {
+    "es2017": true,
+    "node": true,
+    "jest": true,
+    "browser": true
+  }
+}
