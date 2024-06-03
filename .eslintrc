@@ -77,7 +77,7 @@
     "import/named": "warn",
     "no-underscore-dangle": ["error", { "enforceInMethodNames": true, "enforceInClassFields":true}],
     "filenames/no-index": 2,
-    "filenames/match-regex": [2, "^[a-z-.]+$", false],
+    "filenames/match-regex": [2, "^[a-z+-.]+$", false],
     "@typescript-eslint/naming-convention": [
       "error",
       {
